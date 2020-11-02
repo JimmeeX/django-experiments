@@ -1,0 +1,14 @@
+{
+    "python.pythonPath": "${workspaceFolder}/venv/bin/python",
+    "python.autoComplete.extraPaths": [
+        "./**"
+    ],
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintPath": "${workspaceFolder}/venv/bin/pylint",
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Path": "${workspaceFolder}/venv/bin/flake8",
+    "editor.formatOnSave": true,
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "${workspaceFolder}/venv/bin/black"
+}

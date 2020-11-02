@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  django:
+    build: .
+    ports:
+      - 8000:8000 # Expose Backend API Port
+      - 5678:5678 # Expose Port for ptvsd debugger (https://testdriven.io/blog/django-debugging-vs-code/)
+    volumes:
+      - .:/app
+    # env_file: .env
+    # command: python manage.py runserver 0.0.0.0:8000
+    command: /usr/local/bin/gunicorn djangotest.wsgi:application --workers 1 --bind :8000 --reload # Using Gunicorn with autoreload for development (will reload even with syntax error, which runserver is incapable of!)
